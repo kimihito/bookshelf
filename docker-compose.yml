@@ -1,18 +1,18 @@
 version: '2'
 services:
-  db:
-    image: postgres
   web:
     build: .
     command: hanami server --host=0.0.0.0
     volumes:
-      - .:/myapp
+      - .:/bookshelf
     ports:
       - '2300:2300'
-    links:
+    depends_on:
       - db
     volumes_from:
       - bundle
+  db:
+    image: postgres
   bundle:
     image: bookshelf_web
     volumes:

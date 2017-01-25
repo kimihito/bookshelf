@@ -1,6 +1,8 @@
 FROM ruby:2.3.3
 
-ENV APP_HOME /myapp
+RUN apt-get update && apt-get install -y postgresql-client
+
+ENV APP_HOME /bookshelf
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
