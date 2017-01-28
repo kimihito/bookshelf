@@ -1,7 +1,7 @@
 {
   "name": "bookshelf",
   "scripts": {
-    "postdeploy": "hanami db prepare"
+    "postdeploy": "hanami db migrate"
   },
   "env": {
     "LANG": {

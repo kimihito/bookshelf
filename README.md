@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kimihito/bookshelf.svg?branch=master)](https://travis-ci.org/kimihito/bookshelf)
+
 # 背景 / Background (Optional)
 
 - [O'Reilly Japan - アプレンティスシップ・パターン](https://www.oreilly.co.jp/books/9784873114606/)に書いてあった、「読書リストをつくる」の項目で紹介される読書リストのサービスが閉鎖されているようだったので自分用の読書リストを作ってみたいと思った。
