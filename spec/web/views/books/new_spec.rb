@@ -5,7 +5,6 @@ class NewBookParams < Hanami::Action::Params
   params do
     required(:book).schema do
       required(:title).filled(:str?)
-      required(:author).filled(:str?)
     end
   end
 end
@@ -22,6 +21,5 @@ describe Web::Views::Books::New do
 
     rendered.must_include('There was a problem with your submission')
     rendered.must_include('Title is missing')
-    rendered.must_include('Author is missing')
   end
 end

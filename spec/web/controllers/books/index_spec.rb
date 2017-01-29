@@ -9,7 +9,7 @@ describe Web::Controllers::Books::Index do
   before do
     repository.clear
 
-    @book = repository.create(title: 'TDD', author: 'Kent Beck')
+    @book = repository.create(title: 'TDD')
   end
 
   it 'is successful' do

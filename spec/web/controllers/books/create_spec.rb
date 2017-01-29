@@ -3,7 +3,7 @@ require_relative '../../../../apps/web/controllers/books/create'
 
 describe Web::Controllers::Books::Create do
   let(:action) { Web::Controllers::Books::Create.new }
-  let(:params) { Hash[book: { title: 'Confident Ruby', author: 'Avdi Grimm' }] }
+  let(:params) { Hash[book: { title: 'Confident Ruby' }] }
 
   before do
     BookRepository.new.clear
@@ -37,7 +37,6 @@ describe Web::Controllers::Books::Create do
       response[0].must_equal 422
 
       action.params.errors[:book][:title].must_equal ['is missing']
-      action.params.errors[:book][:author].must_equal ['is missing']
     end
   end
 end
