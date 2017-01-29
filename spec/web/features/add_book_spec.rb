@@ -10,6 +10,7 @@ describe 'Add a book' do
 
     within 'form#book-form' do
       fill_in 'Title', with: 'New book'
+      fill_in 'Url', with: 'New url'
 
       click_button 'Create'
     end

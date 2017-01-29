@@ -7,6 +7,7 @@ module Web::Controllers::Books
     params do
       required(:book).schema do
         required(:title).filled(:str?)
+        required(:url).filled(:str?)
       end
     end
 
