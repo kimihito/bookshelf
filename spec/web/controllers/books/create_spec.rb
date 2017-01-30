@@ -3,7 +3,7 @@ require_relative '../../../../apps/web/controllers/books/create'
 
 describe Web::Controllers::Books::Create do
   let(:action) { Web::Controllers::Books::Create.new }
-  let(:params) { Hash[book: { title: 'Confident Ruby', url: 'https://www.confidentruby.com/' }] }
+  let(:params) { Hash[book: { title: 'Confident Ruby', url: 'https://www.confidentruby.com/', status: Book::VALID_STATUSES[:unread] }] }
 
   before do
     BookRepository.new.clear
@@ -38,6 +38,7 @@ describe Web::Controllers::Books::Create do
 
       action.params.errors[:book][:title].must_equal ['is missing']
       action.params.errors[:book][:url].must_equal ['is missing']
+      action.params.errors[:book][:status].must_equal ['is missing', "must be one of: #{Book::VALID_STATUSES.values.join(', ')}"]
     end
   end
 end

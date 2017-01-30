@@ -8,6 +8,7 @@ module Web::Controllers::Books
       required(:book).schema do
         required(:title).filled(:str?)
         required(:url).filled(:str?)
+        required(:status).filled(:str?, included_in?: Book::VALID_STATUSES.values)
       end
     end
 
