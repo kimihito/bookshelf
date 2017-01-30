@@ -4,8 +4,8 @@ describe 'List books' do
   let(:repository) { BookRepository.new }
   before do
     repository.clear
-    repository.create(title: 'PoEAA', author: 'Martin Fowler')
-    repository.create(title: 'TDD', author: 'Kent Beck')
+    repository.create(title: 'PoEAA', url: ' http://amzn.asia/7pl7FYP')
+    repository.create(title: 'TDD', url: 'http://amzn.asia/cjh0v8Q')
   end
   it 'displays each book on the page' do
     visit '/books'

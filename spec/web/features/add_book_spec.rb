@@ -10,7 +10,7 @@ describe 'Add a book' do
 
     within 'form#book-form' do
       fill_in 'Title', with: 'New book'
-      fill_in 'Author', with: 'Some author'
+      fill_in 'Url', with: 'New url'
 
       click_button 'Create'
     end
@@ -30,6 +30,5 @@ describe 'Add a book' do
 
     assert page.has_content?('There was a problem with your submission')
     assert page.has_content?('Title must be filled')
-    assert page.has_content?('Author must be filled')
   end
 end
