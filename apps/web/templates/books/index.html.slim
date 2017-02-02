@@ -1,0 +1,13 @@
+h2
+  | All books
+- if books.any?
+  #books
+    - books.each do |book|
+      .book
+        h2
+          = book.title
+        p
+          = book.url
+- else
+  p.placeholder
+    | There are no books yet.
